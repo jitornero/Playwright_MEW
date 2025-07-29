@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
+test('TC-01- 01 Xpath approach: menos robusto', async ({ page }) => {
 
   const quote1= "The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking."
   await page.goto('https://quotes.toscrape.com/');
@@ -20,12 +20,21 @@ test('has title', async ({ page }) => {
 
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('TC-01- 02 css +locator approach: recomendado por PW', async ({ page }) => {
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  const quote1= "The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking."
+  await page.goto('https://quotes.toscrape.com/');
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+
+  const quote1_selector = await page.locator('div.quote').filter({hasText:"he world as we have created"})
+  console.log("Quote1 encontrado!")
+  await expect(quote1_selector).toBeVisible()
+
+  await expect(quote1_selector.locator(".author")).toHaveText("Albert Einstein")
+  await expect(quote1_selector.locator(".author")).toHaveText("Albert Einstein")
+  await quote1_selector.locator("a").count()
+  await expect(quote1_selector.locator("a").getByText("change")).toBeVisible()
+
+  
+
 });
