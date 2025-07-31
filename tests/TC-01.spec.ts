@@ -29,8 +29,7 @@ test('TC-01- 02 css +locator approach: recomendado por PW', async ({ page }) => 
   const quote1_selector = await page.locator('div.quote').filter({hasText:"he world as we have created"})
   console.log("Quote1 encontrado!")
   await expect(quote1_selector).toBeVisible()
-
-  await expect(quote1_selector.locator(".author")).toHaveText("Albert Einstein")
+  await quote1_selector.screenshot({path:'screenshots/tc-01.png'});
   await expect(quote1_selector.locator(".author")).toHaveText("Albert Einstein")
   await quote1_selector.locator("a").count()
   await expect(quote1_selector.locator("a").getByText("change")).toBeVisible()
