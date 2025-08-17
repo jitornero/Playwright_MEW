@@ -19,6 +19,7 @@ test(`TC${TC_index}-01`, async ({ browser, page }) => {
   await loginButton.click();
   await expect(page).toHaveURL(/login/i);
   await expect(flash).toBeVisible()
+  await expect(flash).toContainText("Your password is invalid!")
   await expect(page).not.toHaveURL(/secure/i);
 
 
