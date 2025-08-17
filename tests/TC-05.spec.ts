@@ -14,7 +14,7 @@ test(`TC${TC_index}-01`, async ({ browser, page }) => {
   await page.getByLabel("username").fill("invalidUser")
   await page.getByLabel("password").fill("invalidPass")
   await page.getByRole('button', {name:"login"}).click();
-  const errorMsg = await page.getByText(" Your username is invalid!")
+  const errorMsg = page.getByText(" Your username is invalid!")
   await expect(errorMsg).toBeVisible()
   
   if (await errorMsg.isVisible()){
@@ -41,8 +41,8 @@ test(`TC${TC_index}-02`, async ({ browser, page }) => {
   await expect(page).toHaveURL("https://the-internet.herokuapp.com/login");
 
   const errorMsg = page.locator("#flash");
-  await expect(await errorMsg).toBeVisible();
-  await expect(await errorMsg).toContainText(" Your username is invalid!")
+  await expect(errorMsg).toBeVisible();
+  await expect(errorMsg).toContainText(" Your username is invalid!")
   
   if (await errorMsg.isVisible()){
     console.log("esto es true!")
