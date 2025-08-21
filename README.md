@@ -14,4 +14,8 @@ TC06 Done
 . ví este video de fixtures https://www.youtube.com/watch?v=l67b-HAC298 
 . retome for of loop
 
-
+21/08: total horas 08:41hs
+. termine TC07 con lo esencial
+. queda pendiente varias mejoras que me dijo el chat para aplicar y una corrección minima
+. forEach tiene indice  lo utilicé como filtro. chat recomiendo utilizar for of (TCv2 se hará)
+. count() devuelve un número, tomando el elemento exacto que encontró (no aplican descendientes)

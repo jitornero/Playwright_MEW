@@ -11,25 +11,30 @@ test.use({ headless: false })
 
   const tags = require("../fixtures/data/tags.json")
 
-  tags.forEach(element => {
-    console.log(element)
+  tags.forEach((element, index) => {
+    console.log("element", element)
+    console.log("index", index)
 
     test(`TC${TC_index}-01_${element}`, async ({ browser, page }) => {
     await page.goto(`https://quotes.toscrape.com/tag/${element}`);
+    const countQuote = await page.locator(".quote").count();
+      await expect(page.getByRole("heading", {level: 3})).toContainText(element);
+      await expect (countQuote).toBeGreaterThanOrEqual(1)
+    let quotesQuantity = {tags:0};
+    if (index==0){
+      quotesQuantity.tags = countQuote;
+      console.log(quotesQuantity)
+    }
 
-      await expect(page.getByRole("heading", {level: 3})).toContainText(element)
+
+
     });
+
   });
-
-
 
 
 // test(`TC${TC_index}-01`, async ({ browser, page }) => {
 //   const tags = require("../fixtures/data/tags.json")
 //   await page.goto('https://quotes.toscrape.com/');
-
-
 // });
-
-
 
