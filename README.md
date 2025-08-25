@@ -8,7 +8,7 @@ Progreso
 Registro de horas: inicio 29 de julio
 
 17/08: total horas 6:30hs
-TC06 Done
+. TC06 Done
 
 20/08: total horas 7:51hs
 . ví este video de fixtures https://www.youtube.com/watch?v=l67b-HAC298 
@@ -19,3 +19,9 @@ TC06 Done
 . queda pendiente varias mejoras que me dijo el chat para aplicar y una corrección minima
 . forEach tiene indice  lo utilicé como filtro. chat recomiendo utilizar for of (TCv2 se hará)
 . count() devuelve un número, tomando el elemento exacto que encontró (no aplican descendientes)
+
+
+23/08:
+. TC-v2 terminado, al final no se hicieron todas las mejoras indicadas porque algunas no aplicaban o no eran necesarias.
+. 
+. 
