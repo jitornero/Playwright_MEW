@@ -22,6 +22,6 @@ Registro de horas: inicio 29 de julio
 
 
 23/08:
-. TC-v2 terminado, al final no se hicieron todas las mejoras indicadas porque algunas no aplicaban o no eran necesarias.
-. 
+. TC07-v2 terminado, al final no se hicieron todas las mejoras indicadas porque algunas no aplicaban o no eran necesarias. (ejemplo importar con ts en vez de js)
+. TC07-v3: le pedí al chat crear una nueva versión te TC07 para profundizar un poquito más en for...of involucrando .entries()
 . 
